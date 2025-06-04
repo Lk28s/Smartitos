@@ -1,0 +1,10 @@
+{
+  "name": "smartitos-proxy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Proxy CORS para Smartitos - Desenvolvido por Lks Modder",
+  "author": "Lks Modder",
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  }
+}
