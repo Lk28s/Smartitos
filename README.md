@@ -32,7 +32,7 @@
 ## 🌟 Acesse o Futuro
 
 📱 Design responsivo e compatível com todos os dispositivos:  
-👉 [https://smartitos.cloud/](https://smartitos.cloud/)
+👉 [https://Smartitos.vercel.app](https://Smartitos.vercel.app)
 
 ---
 
