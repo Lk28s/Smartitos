@@ -42,7 +42,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
   };
 
   function sendRequest() {
-    const url = 'https://api.smartitos.cloud/?type=token';
+    const url = 'https://api.smartitos.vercel.app/?type=token';
     const headers = {
       'Content-Type': 'application/json',
       Accept: 'application/json',
@@ -78,7 +78,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
     };
 
     try {
-      const response = await fetch('https://api.smartitos.cloud/?type=teste', {
+      const response = await fetch('https://api.smartitos.vercel.app/?type=teste', {
         method: 'POST',
         headers,
         body: JSON.stringify({ token }),
@@ -86,7 +86,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
 
       if (!response.ok) throw new Error(`❌ Erro HTTP: ${response.status}`);
       const data = await response.json();
-      config = await solicitarTempoUsuario(data);
+      const config = await solicitarTempoUsuario(data);
       options.TEMPO = config.tempo;
 
       for (let a = 0; a < config.tarefasSelecionadas.length; a++) {
@@ -115,7 +115,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
     };
 
     try {
-      const response = await fetch('https://api.smartitos.cloud/?type=room', {
+      const response = await fetch('https://api.smartitos.vercel.app/?type=room', {
         method: 'POST',
         headers,
         body: JSON.stringify({ apiKey: token }),
@@ -145,7 +145,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
     };
 
     try {
-      const response = await fetch('https://api.smartitos.cloud/?type=tasks', {
+      const response = await fetch('https://api.smartitos.vercel.app/?type=tasks', {
         method: 'POST',
         headers,
         body: JSON.stringify({ token, room, groups }),
@@ -170,7 +170,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
       return;
     }
 
-    let config = await solicitarTempoUsuario(data);
+    const config = await solicitarTempoUsuario(data);
     options.TEMPO = config.tempo;
 
     for (let a = 0; a < config.tarefasSelecionadas.length; a++) {
@@ -185,8 +185,8 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
       const answerId = (isRascunho && task.answer_id != null) ? task.answer_id : undefined;
 
       const url = isRascunho
-        ? `https://api.smartitos.cloud/?type=previewTaskR`
-        : `https://api.smartitos.cloud/?type=previewTask`;
+        ? `https://api.smartitos.vercel.app/?type=previewTaskR`
+        : `https://api.smartitos.vercel.app/?type=previewTask`;
 
       const headers = {
         'Content-Type': 'application/json',
@@ -264,8 +264,8 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
 
     try {
       const url = (tipo === 'Rascunho' || tipo === 'RascunhoE')
-        ? `https://api.smartitos.cloud/?type=submitR`
-        : `https://api.smartitos.cloud/?type=submit`;
+        ? `https://api.smartitos.vercel.app/?type=submitR`
+        : `https://api.smartitos.vercel.app/?type=submit`;
 
       const response = await fetch(url, {
         method: 'POST',
@@ -282,7 +282,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
   }
 
   async function fetchCorrectAnswers(taskId, answerId, token, taskTitle) {
-    const url = `https://api.smartitos.cloud/?type=fetchSubmit`;
+    const url = `https://api.smartitos.vercel.app/?type=fetchSubmit`;
     const headers = {
       'Content-Type': 'application/json',
       Accept: 'application/json',
@@ -305,7 +305,7 @@ document.getElementById('Enviar').addEventListener('submit', (e) => {
   }
 
   function corrigirAtividade(body, taskId, answerId, token, taskTitle) {
-    const url = `https://api.smartitos.cloud/?type=putSubmit`;
+    const url = `https://api.smartitos.vercel.app/?type=putSubmit`;
     const headers = {
       'Content-Type': 'application/json',
       Accept: 'application/json',
