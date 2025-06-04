@@ -1,0 +1,1 @@
+(function oneko() { /* Código do dragao.js aqui */ })();
